@@ -1,4 +1,4 @@
-3>ENTER YOUR NAME</H3>
+<H3>ENTER YOUR NAME</H3>
 <H3>ENTER YOUR REGISTER NO.</H3>
 <H3>EX. NO.6</H3>
 <H3>DATE:</H3>
@@ -66,7 +66,7 @@ Step 11:Plot the error convergence during training using plt.plot() and plt.show
     plt.show()
 
 <H3>Output:</H3>
-j
+
 
 
 <H3>Results:</H3>
