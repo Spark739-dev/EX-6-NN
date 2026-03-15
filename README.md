@@ -68,5 +68,7 @@ Step 11:Plot the error convergence during training using plt.plot() and plt.show
 <H3>Output:</H3>
 
 
+
 <H3>Results:</H3>
+
 Thus, an ANN with MLP is constructed and trained to predict the heart attack using python.
