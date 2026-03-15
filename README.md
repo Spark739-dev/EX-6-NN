@@ -67,7 +67,8 @@ Step 11:Plot the error convergence during training using plt.plot() and plt.show
 
 <H3>Output:</H3>
 
-
+![output](<Screenshot 2026-03-15 202627.png>)
+![output2](<Screenshot 2026-03-15 203346.png>)
 
 <H3>Results:</H3>
 
