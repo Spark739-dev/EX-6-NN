@@ -17,11 +17,56 @@ Step 9:Evaluate the model's accuracy by comparing the predicted labels (y_pred) 
 Step 10:Print the accuracy of the model.<BR>
 Step 11:Plot the error convergence during training using plt.plot() and plt.show().<BR>
 <H3>Program: </H3>
-Insert your code here
+
+    import numpy as np
+    import pandas as pd
+    import matplotlib.pyplot as plt
+    from sklearn.model_selection import train_test_split
+    from sklearn.preprocessing import StandardScaler
+    from sklearn.neural_network import MLPClassifier
+    from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
+    
+    data = pd.read_csv("https://raw.githubusercontent.com/Lavanyajoyce/EX-6-NN/main/heart.csv")
+    
+    X = data.iloc[:, :-1].values   
+    y = data.iloc[:, -1].values    
+    
+    X_train, X_test, y_train, y_test = train_test_split(
+        X, y, test_size=0.2, random_state=42
+    )
+    
+    scaler = StandardScaler()
+    X_train_scaled = scaler.fit_transform(X_train)
+    X_test_scaled = scaler.transform(X_test)
+    
+    mlp_classifier = MLPClassifier(
+        hidden_layer_sizes=(100, 100),
+        max_iter=1000,
+        random_state=42
+    )
+    
+    mlp_classifier.fit(X_train_scaled, y_train)
+    
+    training_loss = mlp_classifier.loss_curve_
+    
+    y_pred = mlp_classifier.predict(X_test_scaled)
+    
+    accuracy = accuracy_score(y_test, y_pred)
+    conf_matrix = confusion_matrix(y_test, y_pred)
+    classification_rep = classification_report(y_test, y_pred)
+    print("Accuracy:", accuracy)
+    print("\nConfusion Matrix:")
+    print(conf_matrix)
+    print("\nClassification Report:")
+    print(classification_rep)
+    plt.plot(training_loss)
+    plt.title("MLP Training Loss Convergence")
+    plt.xlabel("Iteration")
+    plt.ylabel("Training Loss")
+    plt.show()
 
 <H3>Output:</H3>
 
-Show your results here
 
 <H3>Results:</H3>
 Thus, an ANN with MLP is constructed and trained to predict the heart attack using python.
