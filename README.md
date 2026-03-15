@@ -66,7 +66,7 @@ Step 11:Plot the error convergence during training using plt.plot() and plt.show
     plt.show()
 
 <H3>Output:</H3>
-
+j
 
 
 <H3>Results:</H3>
